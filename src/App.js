@@ -1,23 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import bootstrap from 'bootstrap/dist/css/bootstrap.min.css';
+import react from 'react';
+import $ from 'jquery';
+import Header from './components/Header'
+import TopContent from './components/TopContent'
+import MiddleContent from './components/MiddleContent'
+import Footer from './components/Footer'
+// import fontawesome from '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <TopContent />
+      <MiddleContent />
+      <Footer />
     </div>
   );
 }

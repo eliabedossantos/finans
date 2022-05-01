@@ -3,7 +3,7 @@ name: deploy
 on:
   push:
     branches:
-      - react-version
+      - development
 
 jobs:
   deploy:
@@ -15,17 +15,9 @@ jobs:
           node-version: '17.9.0'
       - name: Build web-app
         run: |
-          scl_source enable devtoolset-7 || true
-          scl_source enable llvm-toolset-6.0 || true
-          /etc/profile.d/modules.sh || true
-          module load mpi
-          $INSTALL_DIR/bin/thisbdm.sh
-          git config --system user.name "eliabedossantos"
-          git config --system user.email eliabe.s.o36@gmail.com
-          xvfb-run -d -s "-screen 0 2560x1440x24" make run-demos
           npm install
           npm run build
-
+          
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
